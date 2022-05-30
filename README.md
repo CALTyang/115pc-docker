@@ -44,7 +44,7 @@ docker stop 115pc
 |`DISPLAY_HEIGHT`   |应用界面高度，默认：1080                               |
 |`APT_SOURCE_HOST`  |Apt更新源地址，默认为科技大镜像：mirrors.ustc.edu.cn   |
 
-*更多参数设置，请参考：[https://github.com/jlesage/docker-baseimage-gui]*
+*更多参数设置，请参考：<https://github.com/jlesage/docker-baseimage-gui>*
 
 
 ## 注意事项
