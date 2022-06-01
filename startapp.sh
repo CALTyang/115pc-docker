@@ -16,4 +16,5 @@ else
     echo "Path /Downloads/115download is Ready!"
 fi
 
+export LC_ALL=zh_CN.UTF-8
 exec /usr/local/115/115
