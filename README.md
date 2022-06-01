@@ -1,10 +1,10 @@
 # 115网盘Linux版本的Docker封装
+[![Docker Automated build](https://img.shields.io/docker/automated/jlesage/baseimage-gui.svg)](https://hub.docker.com/r/funcman/115pc/)
 
-## 构建镜像
+## 拉取镜像
 
 ```shell
-docker build -t 115pc:$(date +%Y-%m-%d) .
-docker tag 115pc:$(date +%Y-%m-%d) 115pc:latest
+docker pull funcman/115pc:latest
 ```
 
 
@@ -17,7 +17,7 @@ docker create   --name=115pc                                    \
                 -v <YourConfigDir>:/config                      \
                 -v <YourDownloadDir>:/Downloads/115download     \
                 --restart always                                \
-                115pc
+                funcman/115pc:latest
 ```
 
 
@@ -59,5 +59,5 @@ docker stop 115pc
 
 ## 感谢
 
-* [jlesage/baseimage-gui](https://registry.hub.docker.com/r/jlesage/baseimage-gui)提供的X图形应用容器基础镜像，使用它可以轻松将Linux图形应用程序以Web和VNC的方式使用。
+* [jlesage/baseimage-gui](https://hub.docker.com/r/jlesage/baseimage-gui)提供的X图形应用容器基础镜像，使用它可以轻松将Linux图形应用程序以Web和VNC的方式使用。
 * CALTyang制作的[115pc-docker](https://github.com/CALTyang/115pc-docker)，我这里fork了他的代码，并进一步折腾解决了一些小问题，收获很多。
