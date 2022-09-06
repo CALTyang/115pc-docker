@@ -36,7 +36,7 @@ docker stop 115pc
 |名称               |说明                                                   |
 |:-                 |:-                                                     |
 |`APP_NAME`         |应用名称，默认：115pc                                  |
-|`APP_VERSION`      |指定115客户端版本号，默认：1.0.8.9                     |
+|`APP_VERSION`      |指定115客户端版本号，默认：2.0.0.19                    |
 |`USER_ID`          |指定容器内的用户ID，默认：root                         |
 |`GROUP_ID`         |指定容器内的组ID，默认：root                           |
 |`ENABLE_CJK_FONT`  |默认：1，不建议修改                                    |
