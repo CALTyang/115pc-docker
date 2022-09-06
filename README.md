@@ -11,12 +11,12 @@ docker pull funcman/115pc:latest
 ## 创建容器
 
 ```shell
-docker create   --name=115pc                                                                \
-                -p 11580:5800                                                               \
-                -p 11591:5900                                                               \
-                -v <YourConfigDir>:/config                                                  \
-                -v <YourDownloadDir>:'/run/s6/services/app/'$'\n/Downloads/115download'     \
-                --restart always                                                            \
+docker create   --name=115pc                                    \
+                -p 11580:5800                                   \
+                -p 11591:5900                                   \
+                -v <YourConfigDir>:/config                      \
+                -v <YourDownloadDir>:/Downloads/115download     \
+                --restart always                                \
                 funcman/115pc:latest
 ```
 
@@ -49,14 +49,13 @@ docker stop 115pc
 
 ## 注意事项
 
-1. 考虑到Docker运行的特殊性，不要对下载路径进行修改设置。
-2. 创建容器时，严格指定`/run/s6/services/app/'$'\n/Downloads/115download`这个115默认路径。
-3. 这个路径很长，有一个可能因为疏忽导致的换行符，原版软件如此。
+1. 考虑到Docker运行的特殊性，在每次容器启动时，都会改回***下载路径***设置，以达到固化路径的作用。
+2. 同时由于v1.0.6.7这个版本（后期版本未特别验证，至少到v2.0.0.19依然如此）115客户端，默认的设置中，下载路径有多余的换行符，亦使用强制改回配置的方式实现。
+3. 副作用是其他设置也会被一并改回，若有特殊需求，请自行修改代码。
 4. 由于`jlesage/baseimage-gui`默认情况下，在容器内使用`app`用户运行程序，会造成115客户端无权限使用默认下载路径。
 5. 采用修改参数`USER_ID`和`GROUP_ID`为`root`的手法，解决了事项4的问题，目前没找到更好的方法。
 6. 由于默认使用了`root`用户，导致115客户端下载的文件的权限在其他用户面前为只读，所以尽量使用115客户端删除下载文件。
 7. **不支持**115客户端的在线升级，主要是因为升级过程中需要输入115所在主机系统的登录密码，但是输入设置的密码会提示密码不正确。
-8. 在本Dockfile的编写过程中，原先的做法是启动脚本修改原版软件的的默认位置，从`v2.0.0.19`起，通过创建容器指定原版下载位置的方式解决，这样更简单一点。
 
 
 ## 感谢
