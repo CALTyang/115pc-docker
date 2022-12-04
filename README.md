@@ -1,6 +1,14 @@
 # 115网盘Linux版本的Docker封装
 [![Docker Automated build](https://img.shields.io/docker/automated/jlesage/baseimage-gui.svg)](https://hub.docker.com/r/funcman/115pc/)
 
+## 紧急提示
+我发现在使用一段时间后，会出现无法继续使用的问题。
+
+最近终于抽出时间仔细看了一下，临时的解决方法就是把Web浏览器中的115pc相关的Cookie清除掉。
+
+操作方法比如：<https://support.google.com/chrome/answer/95647>
+
+
 ## 拉取镜像
 
 ```shell
