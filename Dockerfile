@@ -2,7 +2,7 @@ FROM jlesage/baseimage-gui:ubuntu-18.04
 LABEL maintainer="Hezekiah Ho, aka funcman <hyq1986@gmail.com>"
 
 ENV APP_NAME        "115pc"
-ENV APP_VERSION     "2.0.2.9"
+ENV APP_VERSION     "2.0.3.6"
 ENV USER_ID         0
 ENV GROUP_ID        0
 ENV ENABLE_CJK_FONT 1
